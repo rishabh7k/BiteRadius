@@ -1,5 +1,5 @@
 export interface RequestBody {
-  lat: string;
-  lon: string;
+  lat: number;
+  lng: number;
   num: number;
 }
