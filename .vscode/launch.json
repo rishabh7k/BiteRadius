@@ -1,0 +1,50 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next.js: Dev",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/bite-radius/node_modules/next/dist/bin/next",
+      "args": ["dev"],
+      "cwd": "${workspaceFolder}/bite-radius",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["--inspect"],
+      "port": 9229,
+      "sourceMaps": true,
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Next.js: Build",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/bite-radius/node_modules/next/dist/bin/next",
+      "args": ["build"],
+      "cwd": "${workspaceFolder}/bite-radius",
+      "runtimeExecutable": "node",
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Next.js: Start",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/bite-radius/node_modules/next/dist/bin/next",
+      "args": ["start"],
+      "cwd": "${workspaceFolder}/bite-radius",
+      "runtimeExecutable": "node",
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}

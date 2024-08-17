@@ -1,9 +1,12 @@
-import "../app/globals.css";
-
+//import "../app/globals.css";
+// import Navbar from "./navbar/page";
+import FrontPage from "./frontpage/frontpage";
 export default function Home() {
   return (
     <main>
-      <h1>Welcome to BiteRadius!!!</h1>
+      {/* <Navbar /> */}
+      {/* <h1>Welcome to BiteRadius!!!</h1> */}
+      <FrontPage />
     </main>
   );
 }
