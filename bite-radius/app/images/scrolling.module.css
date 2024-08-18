@@ -1,0 +1,17 @@
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+.animateScroll {
+    animation: scroll 15s linear infinite;
+    height: 200%;
+    /* Container is tall enough to hold all images */
+    overflow: hidden;
+    /* Hide any overflow */
+}
