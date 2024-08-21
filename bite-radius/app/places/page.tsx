@@ -93,5 +93,4 @@ const PlaceList = async () => {
     </div>
   );
 };
-// ${styles.body}
 export default PlaceList;

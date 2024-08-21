@@ -1,4 +1,6 @@
 "use client";
+
+import PlaceList from "../places/page";
 import React from "react";
 
 const ClickButton = () => {
@@ -9,7 +11,7 @@ const ClickButton = () => {
         onClick={() => {
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
-              function (position) {
+              (position) => {
                 const latitude = position.coords.latitude;
                 const longitude = position.coords.longitude;
 
