@@ -41,6 +41,7 @@ const ImageBanner = () => {
     </div>
   );
 };
+
 const LogoComponent = () => {
   return (
     <Image
@@ -53,7 +54,20 @@ const LogoComponent = () => {
   );
 };
 
+const FrontImage = () => {
+  return (
+    <Image
+      src={"http://localhost/naan.jpg"}
+      alt="Banner"
+      className="max-w-xs max-h-xs w-full h-full"
+      // height={250}
+      // width={250}
+    />
+  );
+};
+
 export const ImageComponents = {
   ImageBanner,
+  FrontImage,
   LogoComponent,
 };
