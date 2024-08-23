@@ -1,10 +1,10 @@
 import React from "react";
-// var style = "w-auto p-4 hover:bg-sky-200 rounded-full border border-green-700";
+import { ImageComponents } from "../images/component";
 const Navbar = () => {
   return (
     <div className="flex font-bold p-2 h-24">
-      {/* <div className={`${style}`}>logo</div> */}
       <div className="w-auto ml-64 flex items-center">
+        <ImageComponents.LogoComponent />
         <h1 className="text-black text-3xl">Bite</h1>
         <h1 className="text-orange-600 text-3xl">Radius.</h1>
       </div>
@@ -16,5 +16,4 @@ const Navbar = () => {
     </div>
   );
 };
-
 export default Navbar;

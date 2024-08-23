@@ -1,73 +1,22 @@
 import React from "react";
-import styles from "./scrolling.module.css";
-import Image from "next/image";
+
 const ImageBanner = () => {
   return (
-    <div className={`${styles.scrollContainer} w-full h-full overflow-hidden`}>
-      <div className={`${styles.scrollContent} flex flex-col`}>
-        {/* Images duplicated for continuous scrolling */}
-        <img
-          src="http://localhost/momo.jpg"
-          className="w-full h-auto object-cover"
-          alt="Momo"
-        />
-        <img
-          src="http://localhost/biryani.jpg"
-          className="w-full h-auto object-cover"
-          alt="Biryani"
-        />
-        <img
-          src="http://localhost/steak.jpg"
-          className="w-full h-auto object-cover"
-          alt="Steak"
-        />
-        {/* Duplicate images for seamless loop */}
-        <img
-          src="http://localhost/momo.jpg"
-          className="w-full h-auto object-cover"
-          alt="Momo"
-        />
-        <img
-          src="http://localhost/biryani.jpg"
-          className="w-full h-auto object-cover"
-          alt="Biryani"
-        />
-        <img
-          src="http://localhost/steak.jpg"
-          className="w-full h-auto object-cover"
-          alt="Steak"
-        />
-      </div>
+    <div className="w-80 h-80 mt-28">
+      <img
+        src="http://localhost/biryani.jpg"
+        alt="description"
+        className="w-full h-full object-cover rounded-full"
+      />
     </div>
   );
 };
 
 const LogoComponent = () => {
-  return (
-    <Image
-      src={"http://localhost/logo.png"}
-      alt="Logo"
-      className="max-w-xs max-h-xs"
-      height={180}
-      width={180}
-    />
-  );
-};
-
-const FrontImage = () => {
-  return (
-    <Image
-      src={"http://localhost/naan.jpg"}
-      alt="Banner"
-      className="max-w-xs max-h-xs w-full h-full"
-      // height={250}
-      // width={250}
-    />
-  );
+  return <img src="http://localhost/logo.png" alt="Logo" className="h-14" />;
 };
 
 export const ImageComponents = {
   ImageBanner,
-  FrontImage,
   LogoComponent,
 };
