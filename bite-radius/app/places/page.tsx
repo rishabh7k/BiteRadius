@@ -1,7 +1,7 @@
 "use client";
 import "../../app/globals.css";
 import styles from "./body.module.css";
-
+import MapComponent from "../maps/mapComponent";
 import React from "react";
 import PlaceCard from "./restaurant/card";
 import { Place } from "../models/models";
@@ -58,7 +58,17 @@ const PlaceList = () => {
   }, [lat, lng]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="flex items-center justify-center">
+          <img
+            src="http://localhost/loading.gif"
+            alt="loading"
+            className="w-72 h-auto"
+          />
+        </div>
+      </div>
+    );
   }
 
   if (error) {
@@ -70,10 +80,13 @@ const PlaceList = () => {
   }
 
   return (
-    <div className={`w-1/2 space-y-4 `}>
-      {places.map((place) => (
-        <PlaceCard key={place.id} place={place} />
-      ))}
+    <div className="flex">
+      <div className="h-[600px] overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-slate-50 pl-52 pt-12 pr-7 w-1/2 space-y-4">
+        {places.map((place) => (
+          <PlaceCard key={place.id} place={place} />
+        ))}
+      </div>
+      {/* <MapComponent /> */}
     </div>
   );
 };
