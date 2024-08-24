@@ -15,3 +15,8 @@ export interface Place {
     text: string;
   };
 }
+
+export interface LocationCoords {
+  lat: number | null;
+  lng: number | null;
+}

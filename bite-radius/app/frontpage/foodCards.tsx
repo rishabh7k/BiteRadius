@@ -28,7 +28,7 @@ const CardList = () => {
             alt={card.text}
             className="w-14 h-14 object-contain"
           />
-          <div className="text-xs text-gray-700 font-bold">{card.text}</div>
+          <div className="text-xs text-gray-500 font-bold">{card.text}</div>
         </div>
       ))}
     </div>
