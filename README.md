@@ -22,7 +22,7 @@ BiteRadius is your go-to solution for discovering top-rated restaurants within y
 
 ## Demonstration
 
-*Video demonstration coming soon.*
+![BiteRadius Demonstration](/demo.gif)
 
 ## Installation and Setup Instructions
 
