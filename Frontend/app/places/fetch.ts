@@ -12,7 +12,6 @@ export const FetchPlaces = async (
   };
   try {
     const url = process.env.NEXT_PUBLIC_BACKEND_API_URL;
-    console.log("api keyyy: " + url);
     if (typeof url === "string") {
       const response = await axios.post(url, body);
       var yy: { places: Place[] } = { places: [] };
