@@ -1,13 +1,14 @@
 "use client";
-
 import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { LocationCoords } from "../models/models";
+import { useLocationStore } from "@/locationStore/store";
 
 const ExploreButton: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
+  const setLocation = useLocationStore((state) => state.setLocation);
 
   const handleClick = async () => {
     setIsLoading(true);
@@ -18,20 +19,8 @@ const ExploreButton: React.FC = () => {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
       };
-
-      if (
-        typeof location.lat === "number" &&
-        typeof location.lng === "number"
-      ) {
-        const queryParams = new URLSearchParams({
-          lat: location.lat.toString(),
-          lng: location.lng.toString(),
-        }).toString();
-
-        router.push(`/places?${queryParams}`);
-      } else {
-        router.push(`/places`);
-      }
+      setLocation(location);
+      router.push(`/places`);
     } catch (error) {
       console.error("Error getting location:", error);
     } finally {

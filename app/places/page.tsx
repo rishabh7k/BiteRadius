@@ -4,28 +4,33 @@ import PlaceCard from "./restaurant/card";
 import MapComponent from "../maps/mapComponent";
 import { Place } from "../models/models";
 import "../globals.css";
+import { useSearchParams } from "next/navigation";
 import { FetchPlaces } from "./fetch";
 import { ImageComponents } from "../images/component";
-import { useLocationStore } from "@/locationStore/store";
-import { LocationCoords } from "../models/models";
+
 const PlaceList = () => {
-  const location = useLocationStore((state) => state.location);
+  const searchParams = useSearchParams();
+  const lat = parseFloat(searchParams.get("lat") || "0");
+  const lng = parseFloat(searchParams.get("lng") || "0");
+
   const [places, setPlaces] = React.useState<Place[]>([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [error, setError] = React.useState<string | null>(null);
-  const [selectedLocation, setSelectedLocation] =
-    React.useState<LocationCoords | null>(null);
+  const [selectedLocation, setSelectedLocation] = React.useState<{
+    lat: number;
+    lng: number;
+  } | null>(null);
 
   React.useEffect(() => {
     const fetchPlaces = async () => {
-      if (!location) {
+      if (lat === 0 && lng === 0) {
         setError("Invalid location parameters");
         setIsLoading(false);
         return;
       }
 
       try {
-        const fetchedPlaces = await FetchPlaces(location.lat, location.lng);
+        const fetchedPlaces = await FetchPlaces(lat, lng);
         setPlaces(fetchedPlaces);
 
         if (fetchedPlaces.length > 0) {
@@ -43,7 +48,7 @@ const PlaceList = () => {
     };
 
     fetchPlaces();
-  }, [location]);
+  }, [lat, lng]);
   const handlePlaceClick = (lat: number, lng: number) => {
     setSelectedLocation({ lat, lng });
   };

@@ -1,7 +1,7 @@
 import React from "react";
 import { ImageComponents } from "../images/component";
 import BannerText from "./bannerText";
-import CardList from "./foodCards";
+import Descriptives from "./descriptives";
 const FrontPage = () => {
   return (
     <div className="h-auto flex flex-wrap items-center justify-center">
@@ -10,7 +10,7 @@ const FrontPage = () => {
           <BannerText />
           <ImageComponents.ImageBanner />
         </div>
-        <CardList />
+        <Descriptives />
       </div>
     </div>
   );

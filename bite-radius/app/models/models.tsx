@@ -17,6 +17,6 @@ export interface Place {
 }
 
 export interface LocationCoords {
-  lat: number | null;
-  lng: number | null;
+  lat: number;
+  lng: number;
 }

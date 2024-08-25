@@ -1,5 +1,5 @@
 import React from "react";
-import ExploreButton from "../client/exploreButton";
+import ExploreButton from "./exploreButton";
 const BannerText = () => {
   return (
     <div className="w-96 text-5xl font-bold h-56 mt-36">
