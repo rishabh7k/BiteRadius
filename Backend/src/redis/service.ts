@@ -1,7 +1,10 @@
 import client from "./connection.js";
+import { SetOptions } from "redis";
 
 const set = async (key: string, value: string) => {
-  const reply = await client.set(key, value);
+  const options: SetOptions = {};
+  options.EX = 600;
+  const reply = await client.set(key, value, options);
   return reply;
 };
 
