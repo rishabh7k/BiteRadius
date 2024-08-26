@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from "express";
-import express from "express";
 import crypto from "crypto";
 import { RedisService } from "../redis/service.js";
 
@@ -33,7 +32,7 @@ export const middleware = async (
     next();
   }
 };
-function generateCacheKey(req: express.Request): string {
+function generateCacheKey(req: Request): string {
   const { method, url, body } = req;
   const hash = crypto
     .createHash("md5")
