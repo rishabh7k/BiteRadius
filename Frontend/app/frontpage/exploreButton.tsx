@@ -32,7 +32,7 @@ const ExploreButton: React.FC = () => {
     <button
       onClick={handleClick}
       disabled={isLoading}
-      className="bg-orange-600 text-sm font-light w-28 rounded-lg text-white p-1 mb-3 disabled:opacity-50"
+      className="bg-orange-500 text-sm font-bold w-28 rounded-lg text-white p-1 mb-3 disabled:opacity-50 shadow-md hover:scale-105 transition-transform duration-100"
     >
       {isLoading ? "Loading..." : "Explore"}
     </button>

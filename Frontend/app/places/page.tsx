@@ -8,6 +8,7 @@ import { FetchPlaces } from "./fetch";
 import { ImageComponents } from "../images/component";
 import { useLocationStore } from "@/locationStore/store";
 import { LocationCoords } from "../models/models";
+
 const PlaceList = () => {
   const location = useLocationStore((state) => state.location);
   const [places, setPlaces] = React.useState<Place[]>([]);
@@ -15,6 +16,7 @@ const PlaceList = () => {
   const [error, setError] = React.useState<string | null>(null);
   const [selectedLocation, setSelectedLocation] =
     React.useState<LocationCoords | null>(null);
+  const [selectedPlace, setSelectedPlace] = React.useState<Place | null>(null);
 
   React.useEffect(() => {
     const fetchPlaces = async () => {
@@ -46,6 +48,9 @@ const PlaceList = () => {
   }, [location]);
   const handlePlaceClick = (lat: number, lng: number) => {
     setSelectedLocation({ lat, lng });
+  };
+  const handleCardClick = (place: Place) => {
+    setSelectedPlace(place);
   };
 
   if (isLoading) {
@@ -81,12 +86,14 @@ const PlaceList = () => {
           <PlaceCard
             key={place.id}
             place={place}
-            onClick={() =>
+            onClick={() => {
+              handleCardClick(place);
               handlePlaceClick(
                 place.location.latitude,
                 place.location.longitude
-              )
-            }
+              );
+            }}
+            isSelected={selectedPlace?.id === place.id}
           />
         ))}
       </div>

@@ -33,7 +33,7 @@ const DescriptiveComponent = () => {
       {descriptives.map((value, index) => (
         <div
           key={index}
-          className="flex w-36 h-16 items-center justify-center space-x-2 shadow-lg rounded-lg"
+          className="flex w-36 h-16 items-center justify-center space-x-2 shadow-lg rounded-lg hover:scale-125 transition-transform duration-300"
         >
           <img
             src={value.imgSrc}

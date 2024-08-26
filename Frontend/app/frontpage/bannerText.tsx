@@ -3,7 +3,7 @@ import ExploreButton from "./exploreButton";
 const BannerText = () => {
   return (
     <div className="w-96 text-5xl font-bold h-56 mt-36">
-      Your Favourite <span className="text-orange-600">Food</span> Just Round
+      Your Favourite <span className="text-orange-500">Food</span> Just Round
       The Corner
       <div>
         <ExploreButton />
